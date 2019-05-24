@@ -16,19 +16,19 @@ export const RecipeSearch = ({ handleSubmit, handleChange }) => {
                             <label htmlFor="search" className="text-capitalize">
                                 type recipes seperated by comma
                             </label>
-                            <div className="input-group">
+                            <div className="input-group mt-3">
                                 <input
                                     type="text"
                                     name="search"
                                     placeholder="chicken,onions,carrots"
-                                    className="form-control"
+                                    className="form-control input_search"
                                     value={search}
                                     onChange={handleChange}
                                 />
                                 <div className="input-group-append">
                                     <button
                                         type="submit"
-                                        className="input-group-text bg-primary text-white"
+                                        className="input-group-text bg-dark text-white input_search"
                                     >
                                         <i className="fas fa-search" />
                                     </button>

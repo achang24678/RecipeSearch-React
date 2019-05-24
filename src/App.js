@@ -8,19 +8,18 @@ export const UserContext = React.createContext();
 
 const App = () => {
   const [recipes, setRecipes] = useState(recipesTemp);
-  const [url, setUrl] = useState('https://www.food2fork.com/api/search?key=3136d10e0a065bb3fb40bd890409a991');
+  const [url, setUrl] = useState('https://www.food2fork.com/api/search?key=f1391f22a68c282654a471f611237d9f');
   const [details_id, setDetailsId] = useState(35389); //recipe id
   const [pageIndex, setPageIndex] = useState(1);
   const [search, setSearch] = useState('');
   const query = '&q=';
-  const base_url = 'https://www.food2fork.com/api/search?key=3136d10e0a065bb3fb40bd890409a991';
+  const base_url = 'https://www.food2fork.com/api/search?key=f1391f22a68c282654a471f611237d9f';
   const [err, setErr] = useState('');
 
   const getRecipes = async () => {
     try {
       const data = await fetch(url);
       const jsonData = await data.json();
-      console.log(jsonData);
       if(jsonData.recipes.length === 0){
         setErr('sorry, search did not return any results');
       } else {
@@ -34,10 +33,7 @@ const App = () => {
   };
   useEffect(() => { // component did mount
     getRecipes();
-  }, [])
-
-
-
+  }, []);
 
   const displayPage = (index) => { // page change manipulation
     switch (index) {
@@ -66,7 +62,7 @@ const App = () => {
 
   useEffect(() => { //whenever url changes, we get the new recipes list, this is eqaul to attach callback function to setState
     getRecipes();
-  }, [url])
+  }, [url]);
 
   const handleChange = (e) => {
     setSearch(e.target.value);

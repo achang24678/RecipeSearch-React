@@ -8,10 +8,10 @@ const Recipe = ({ image_url, title, source_url, publisher, recipe_id, handleDeta
         <React.Fragment>
             <div className="col-10 mx-auto col-md-6 col-lg-4 my-3">
 
-                <div className="card">
+                <div className="card card-collection">
                     <img
                         src={image_url}
-                        className="img-card-top"
+                        className="card-img-top"
                         style={{ height: "14rem" }}
                         alt="recipe"
                     />

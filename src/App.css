@@ -1,6 +1,41 @@
-body {
+
+
+html, body {
   font-family: 'Open Sans', sans-serif !important; /*prevent boostrap defaul override style*/
+  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 }
 .text-slanted {
   font-family: 'Courgette', cursive;
+}
+
+.card-collection {
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #a5a2a2;
+}
+.card-collection img{
+  border-radius: 8px;
+  opacity: 0.9;
+  transform: scale(1);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.card-collection img:hover{
+  opacity: 1;
+  transform: scale(1.08);
+}
+.input_search {
+  border-radius: 5px;
+}
+
+.detail_container {
+  margin-top: 10%;
+}
+.detail_container img {
+  border-radius: 8px;
+}
+hr {
+  width: 100%;
+  margin-top: 30px;
 }

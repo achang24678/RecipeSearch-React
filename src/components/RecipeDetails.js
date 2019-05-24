@@ -8,7 +8,8 @@ export const RecipeDetails = ({ handleIndex }) => {
 
     const { details_id } = useContext(UserContext);
     const [detailRecipe, setDetailRecipe] = useState(recipeDetail);
-    const [url2] = useState(`https://www.food2fork.com/api/get?key=3136d10e0a065bb3fb40bd890409a991&rId=${details_id}`)
+    const [url2] = useState(
+        `https://www.food2fork.com/api/get?key=f1391f22a68c282654a471f611237d9f&rId=${details_id}`)
 
 
     const { image_url, publisher, publisher_url, source_url, title, ingredients } = detailRecipe;
@@ -24,14 +25,14 @@ export const RecipeDetails = ({ handleIndex }) => {
             }
         }
         fetchData();
-    }, [])
+    }, []);
 
 
     // () => props.handleIndex(1)
 
     return (
         <React.Fragment>
-            <div className="container">
+            <div className="container detail_container">
                 <div className="row">
                     <div className="col-10 mx-auto col-md-6 my-3">
                         <button
@@ -44,8 +45,8 @@ export const RecipeDetails = ({ handleIndex }) => {
                     </div>
                     {/*Details*/}
                     <div className="col-10 mx-auto col-md-6 my-3">
-                        <h6 className="text-uppercase">{title}</h6>
-                        <h6 className="text-warning text-capitalize text-slanted">
+                        <h4 className="text-uppercase">{title}</h4>
+                        <h6 className="text-secondary text-capitalize text-slanted">
                             provided by {publisher}</h6>
                         <a href={publisher_url}
                             target="_blank"
@@ -57,8 +58,11 @@ export const RecipeDetails = ({ handleIndex }) => {
                             rel="noopener noreferrer"
                             className="btn btn-success mt-2 mx-3 text-capitalize">recipe url
                         </a>
+                        <hr/>
                         <ul className="list-group mt-4">
+                        
                             <h2 className="mt-3 mb-4">Ingredients</h2>
+                            
                             {ingredients.map((item, index) => {
                                 return (
                                     <li className="list-group-item text-slanted" key={index}>
