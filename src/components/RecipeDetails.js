@@ -8,7 +8,7 @@ export const RecipeDetails = ({ handleIndex }) => {
 
     const { details_id } = useContext(UserContext);
     const [detailRecipe, setDetailRecipe] = useState(recipeDetail);
-    const [url2] = useState(`https://www.food2fork.com/api/get?key=f1391f22a68c282654a471f611237d9f&rId=${details_id}`)
+    const [url2] = useState(`https://www.food2fork.com/api/get?key=3136d10e0a065bb3fb40bd890409a991&rId=${details_id}`)
 
 
     const { image_url, publisher, publisher_url, source_url, title, ingredients } = detailRecipe;

@@ -8,23 +8,26 @@ export const UserContext = React.createContext();
 
 const App = () => {
   const [recipes, setRecipes] = useState(recipesTemp);
-  const [url, setUrl] = useState('https://www.food2fork.com/api/search?key=f1391f22a68c282654a471f611237d9f');
+  const [url, setUrl] = useState('https://www.food2fork.com/api/search?key=3136d10e0a065bb3fb40bd890409a991');
   const [details_id, setDetailsId] = useState(35389); //recipe id
   const [pageIndex, setPageIndex] = useState(1);
   const [search, setSearch] = useState('');
   const query = '&q=';
-  const base_url = 'https://www.food2fork.com/api/search?key=f1391f22a68c282654a471f611237d9f';
+  const base_url = 'https://www.food2fork.com/api/search?key=3136d10e0a065bb3fb40bd890409a991';
   const [err, setErr] = useState('');
 
   const getRecipes = async () => {
     try {
       const data = await fetch(url);
       const jsonData = await data.json();
-      if (jsonData.recipes.length === 0) {
-        setErr('sorry, search did not return any results')
+      console.log(jsonData);
+      if(jsonData.recipes.length === 0){
+        setErr('sorry, search did not return any results');
       } else {
-        setRecipes(jsonData.recipes);
+        setErr('');
       }
+      setRecipes(jsonData.recipes);
+      
     } catch (error) {
       console.log(error);
     }

@@ -8,7 +8,7 @@ export const RecipeList = (props) => {
     return (
         <React.Fragment>
 
-            <RecipeSearch handleChange={props.handleChange} handleSubmit={props.handleSubmit} />
+            <RecipeSearch handleChange={props.handleChange} handleSubmit={props.handleSubmit}/>
 
             <div className="container my-5">
                 {/*title*/}
@@ -18,19 +18,15 @@ export const RecipeList = (props) => {
                     </div>
                 </div>
                 {/*End of title*/}
-                {err ? (<h1 className="text-danger text-center">{err}</h1>)
-                    : (
-                        recipes.map((recipe) => {
-                            return (
-                                <Recipe key={recipe.recipe_id} {...recipe} handleDetails={props.handleDetails} />
-                            )
-                        })
-                    )
-                }
+                {err && <h1 className="text-danger text-center">{err}</h1>}
                 {/*Map recipes array each recipe to Recipe component*/}
                 <div className="row">
 
-                    {}
+                    {recipes.map((recipe) => {
+                        return (
+                            <Recipe key={recipe.recipe_id} {...recipe} handleDetails={props.handleDetails} />
+                        )
+                    })}
                 </div>
             </div>
         </React.Fragment>
